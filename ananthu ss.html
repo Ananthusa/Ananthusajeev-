@@ -58,7 +58,46 @@
         }
     </style>
 </head>
+<body>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatic Background Transition</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            transition: background-color 2s ease-in-out;
+        }
+    </style>
+</head>
 <body>
+
+<h1>Enjoy the changing colors!</h1>
+
+<script>
+    function changeBackground() {
+        const colors = [
+            'rgb(255, 87, 51)', // Red
+            'rgb(51, 255, 87)', // Green
+            'rgb(51, 87, 255)', // Blue
+            'rgb(255, 51, 161)' // Pink
+        ];
+        let currentColorIndex = 0;
+
+        setInterval(() => {
+            currentColorIndex = (currentColorIndex + 1) % colors.length;
+            document.body.style.backgroundColor = colors[currentColorIndex];
+        }, 3000); // Change color every 3 seconds
+    }
+
+    window.onload = changeBackground;
+</script>
+
+</body>
+  
     <h1>Ananthu Sajeev</h1>
     <div class="contact-info">
         <p>Kudayathoor, India, 685590</p>
